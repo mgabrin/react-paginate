@@ -18,7 +18,7 @@ var PageView = function PageView(props) {
   var pageClassName = props.pageClassName;
   var pageLinkClassName = props.pageLinkClassName;
 
-  var onClick = props.onClick;
+  var _onClick = props.onClick;
   var href = props.href;
   var ariaLabel = props.ariaLabel || 'Page ' + props.page + (props.extraAriaContext ? ' ' + props.extraAriaContext : '');
   var ariaCurrent = null;
@@ -45,18 +45,23 @@ var PageView = function PageView(props) {
 
   return _react2.default.createElement(
     'li',
-    { className: pageClassName },
+    {
+      className: pageClassName,
+      onClick: function onClick() {
+        console.log('CLICKED');
+        _onClick();
+      },
+      onKeyPress: _onClick
+    },
     _react2.default.createElement(
       'a',
       {
-        onClick: onClick,
         role: 'button',
         className: pageLinkClassName,
         href: href,
         tabIndex: '0',
         'aria-label': ariaLabel,
-        'aria-current': ariaCurrent,
-        onKeyPress: onClick
+        'aria-current': ariaCurrent
       },
       props.page
     )
