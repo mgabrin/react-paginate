@@ -40,7 +40,10 @@ const PageView = props => {
   return (
     <li
       className={pageClassName}
-      onClick={onClick}
+      onClick={() => {
+        console.log('CLICKED');
+        onClick();
+      }}
       onKeyPress={onClick}
     >
       <a
