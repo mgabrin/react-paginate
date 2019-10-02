@@ -24,7 +24,11 @@ var BreakView = function BreakView(props) {
 
   return _react2.default.createElement(
     'li',
-    { className: className },
+    {
+      className: className,
+      onClick: onClick,
+      onKeyPress: onClick
+    },
     _react2.default.createElement(
       'a',
       {
