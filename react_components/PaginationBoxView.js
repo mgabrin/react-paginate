@@ -327,14 +327,16 @@ export default class PaginationBoxView extends Component {
 
     return (
       <ul className={containerClassName}>
-        <li className={previousClasses}>
+        <li
+          className={previousClasses}
+          onClick={this.handlePreviousPage}
+          onKeyPress={this.handlePreviousPage}
+        >
           <a
-            onClick={this.handlePreviousPage}
             className={previousLinkClassName}
             href={this.hrefBuilder(selected - 1)}
             tabIndex="0"
             role="button"
-            onKeyPress={this.handlePreviousPage}
             aria-disabled={previousAriaDisabled}
           >
             {previousLabel}
@@ -343,14 +345,16 @@ export default class PaginationBoxView extends Component {
 
         {this.pagination()}
 
-        <li className={nextClasses}>
+        <li
+          className={nextClasses}
+          onClick={this.handleNextPage}
+          onKeyPress={this.handleNextPage}
+        >
           <a
-            onClick={this.handleNextPage}
             className={nextLinkClassName}
             href={this.hrefBuilder(selected + 1)}
             tabIndex="0"
             role="button"
-            onKeyPress={this.handleNextPage}
             aria-disabled={nextAriaDisabled}
           >
             {nextLabel}
