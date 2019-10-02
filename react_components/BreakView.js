@@ -8,17 +8,11 @@ const BreakView = props => {
   const className = breakClassName || 'break';
 
   return (
-    <li
-      className={className}
-      onClick={onClick}
-      onKeyPress={onClick}
-    >
+    <li className={className} onClick={onClick} onKeyPress={onClick}>
       <a
         className={breakLinkClassName}
-        onClick={onClick}
         role="button"
         tabIndex="0"
-        onKeyPress={onClick}
       >
         {breakLabel}
       </a>

@@ -24,19 +24,13 @@ var BreakView = function BreakView(props) {
 
   return _react2.default.createElement(
     'li',
-    {
-      className: className,
-      onClick: onClick,
-      onKeyPress: onClick
-    },
+    { className: className, onClick: onClick, onKeyPress: onClick },
     _react2.default.createElement(
       'a',
       {
         className: breakLinkClassName,
-        onClick: onClick,
         role: 'button',
-        tabIndex: '0',
-        onKeyPress: onClick
+        tabIndex: '0'
       },
       breakLabel
     )
